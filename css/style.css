@@ -3053,12 +3053,15 @@ pre .javascript .function {
 .reward-content .reward-select .reward-select-item {
   margin: 20px 5px 10px;
   width: 156px;
-  height: 56px;
   line-height: 54px;
   text-align: center;
   border: 1px solid #e6e6e6;
   border-radius: 4px;
   cursor: pointer;
+  padding: 6px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .reward-content .reward-select .reward-select-item img {
   vertical-align: middle;
@@ -3068,11 +3071,9 @@ pre .javascript .function {
 }
 .reward-content .reward-select .reward-select-item .reward-select-item-wechat {
   min-width: 112px;
-  height: 30px;
 }
 .reward-content .reward-select .reward-select-item .reward-select-item-alipay {
   min-width: 85px;
-  height: 30px;
 }
 .reward-content .reward-select .checked {
   color: #ea6f5a;
