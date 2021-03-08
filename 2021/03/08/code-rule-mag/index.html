@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>编码规范 | Zhenggl&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="zhenggl, javascript，css，html，react，android，ios，react-native，Node.js，webpack，gulp，小程序" />
+  
+  <meta name="description" content="一、css规范1.1 css命名规则1. class 必须单词全字母小写，单词间以 - 分隔。 2. class 必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。  1.2 属性顺序 位置属性(position、top、right、z-index、display、float等)；  大小(width, height, padding, margin等)；  文字系列(font、line">
+<meta property="og:type" content="article">
+<meta property="og:title" content="编码规范">
+<meta property="og:url" content="https://www.91temaichang/2021/03/08/code-rule-mag/index.html">
+<meta property="og:site_name" content="Zhenggl&#39;s Blog">
+<meta property="og:description" content="一、css规范1.1 css命名规则1. class 必须单词全字母小写，单词间以 - 分隔。 2. class 必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。  1.2 属性顺序 位置属性(position、top、right、z-index、display、float等)；  大小(width, height, padding, margin等)；  文字系列(font、line">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-03-08T07:05:10.000Z">
+<meta property="article:modified_time" content="2021-03-08T07:23:46.126Z">
+<meta property="article:author" content="Genglin Zheng">
+<meta property="article:tag" content="编码规范">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="css">
+<meta name="twitter:card" content="summary">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">一个专注于大前端的技术博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>分类</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo" id="logo-img">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        一个专注于大前端的技术博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        不是井里没有水，而是你挖的不够深
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Zhenggl" target="_blank" href="//91temaichang.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/kbmjj123">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="QQ" target="_blank" ">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="Weixin" target="_blank" ">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-code-rule-mag" class="article article-type-post" itemscope
+         itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="post-title" itemprop="name">
+      编码规范
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/积累与沉淀/">
+                        积累与沉淀
+                      </a>
+                  
+                      <a href="/categories/编码与管理/">
+                        编码与管理
+                      </a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2021-03-08
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+
+                
+            </header>
+        
+        <div class="article-entry post-content" itemprop="articleBody">
+            
+                
+                <h3 id="一、css规范"><a href="#一、css规范" class="headerlink" title="一、css规范"></a>一、css规范</h3><h4 id="1-1-css命名规则"><a href="#1-1-css命名规则" class="headerlink" title="1.1 css命名规则"></a>1.1 css命名规则</h4><pre><code>1. class 必须单词全字母小写，单词间以 - 分隔。
+2. class 必须代表相应模块或部件的内容或功能，不得以样式信息进行命名。
+</code></pre>
+<h4 id="1-2-属性顺序"><a href="#1-2-属性顺序" class="headerlink" title="1.2 属性顺序"></a>1.2 属性顺序</h4><ol>
+<li><p>位置属性(position、top、right、z-index、display、float等)；</p>
+</li>
+<li><p>大小(width, height, padding, margin等)；</p>
+</li>
+<li><p>文字系列(font、line-height、letter-spacing、color、text-align等)；</p>
+</li>
+<li><p>背景(background、border等)；</p>
+</li>
+<li><p>其他(animation、transition等)</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.declaration-order</span> &#123;</span><br><span class="line">  <span class="comment">/* Positioning */</span></span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">bottom</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">z-index</span>: <span class="number">100</span>;</span><br><span class="line">  </span><br><span class="line">  <span class="comment">/* Box-model */</span></span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">float</span>: right;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Typography */</span></span><br><span class="line">  <span class="attribute">font</span>: normal <span class="number">13px</span> <span class="string">&quot;Helvetica Neue&quot;</span>, sans-serif;</span><br><span class="line">  <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#333</span>;</span><br><span class="line">  <span class="attribute">text-align</span>: center;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Visual */</span></span><br><span class="line">  <span class="attribute">background-color</span>: <span class="number">#f5f5f5</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#e5e5e5</span>;</span><br><span class="line">  <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/* Misc */</span></span><br><span class="line">  <span class="attribute">opacity</span>: <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-3-选择器如无必要"><a href="#1-3-选择器如无必要" class="headerlink" title="1.3 选择器如无必要"></a>1.3 选择器如无必要</h4><p>不得为 id、class 选择器添加类型选择器进行限定，在性能和维护性上，都有一定的影响。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 推荐*/</span></span><br><span class="line"><span class="selector-id">#error</span>,</span><br><span class="line"><span class="selector-class">.danger-message</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>-<span class="attribute">color</span>: <span class="number">#c00</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 不推荐*/</span></span><br><span class="line">dialog<span class="selector-id">#error</span>,</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-class">.danger-message</span> &#123;</span><br><span class="line">    <span class="attribute">font</span>-<span class="attribute">color</span>: <span class="number">#c00</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="1-4-多个选择器公用相同属性时"><a href="#1-4-多个选择器公用相同属性时" class="headerlink" title="1.4 多个选择器公用相同属性时"></a>1.4 多个选择器公用相同属性时</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 推荐 */</span></span><br><span class="line">	<span class="selector-class">.post</span>,</span><br><span class="line">	<span class="selector-class">.page</span>,</span><br><span class="line">	<span class="selector-class">.comment</span> &#123;</span><br><span class="line">	    <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/* 不推荐 */</span></span><br><span class="line">	<span class="selector-class">.post</span>, <span class="selector-class">.page</span>, <span class="selector-class">.comment</span> &#123;</span><br><span class="line">	    <span class="attribute">line-height</span>: <span class="number">1.5</span>;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二、JS规范"><a href="#二、JS规范" class="headerlink" title="二、JS规范"></a>二、JS规范</h3><h4 id="2-1-文件命名"><a href="#2-1-文件命名" class="headerlink" title="2.1 文件命名"></a>2.1 文件命名</h4><p>文件夹和文件名的命名应该能代表代码功能，与后端一致为佳。</p>
+<h4 id="2-2-语言规范"><a href="#2-2-语言规范" class="headerlink" title="2.2 语言规范"></a>2.2 语言规范</h4></li>
+<li><p>变量<br>声明变量必须加上 let、const、var 关键字.<br>当你没有写 let、const、var, 变量就会暴露在全局上下文中, 这样很可能会和现有变量冲突. 另外, 如果没有加上, 很难明确该变量的作用域是什么,<br>变量也很可能像在局部作用域中, 很轻易地泄漏到 Document 或者 Window 中, 所以务必用 let、const 、var去声明变量.</p>
+</li>
+<li><p>分号<br>总是使用分号<br>如果仅依靠语句间的隐式分隔, 有时会很麻烦. 你自己更能清楚哪里是语句的起止,而且有些情况下，漏掉分号会很危险。</p>
+</li>
+<li><p>for-in 循环<br>最好只用于 object/map/hash 的遍历<br>对 Array 用 for-in 循环有时会出错. 因为它并不是从 0 到 length - 1 进行遍历, 而是所有出现在对象及其原型链的键值.<br>例如：给原型添加属性之后，默认情况下枚举，最后输出1234513</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewArrayTwo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="keyword">var</span> array=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span> ];</span><br><span class="line">		<span class="built_in">Array</span>.prototype.age=<span class="number">13</span>;</span><br><span class="line">		<span class="keyword">var</span> result=[];</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">var</span> i <span class="keyword">in</span> array)&#123;</span><br><span class="line">	      result.push(array[i]);</span><br><span class="line">		&#125;</span><br><span class="line">		alert(result.join(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line">	  &#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="三、编码风格"><a href="#三、编码风格" class="headerlink" title="三、编码风格"></a>三、编码风格</h3><p>3.1 明确作用域<br>任何时候都要明确作用域 – 提高可移植性和清晰度. 例如, 不要依赖于作用域链中的 window 对象.<br>可能在其他应用中, 你函数中的 window 不是指之前的那个窗口对象。</p>
+<p>3.2 代码格式化<br>数组和对象的初始化,如果初始值不是很长, 就保持写在单行上:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];  <span class="comment">// No space after [ or before ].</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">a</span>: <span class="number">1</span>, <span class="attr">b</span>: <span class="number">2</span>, <span class="attr">c</span>: <span class="number">3</span>&#125;;  <span class="comment">// No space after &#123; or before &#125;.</span></span><br><span class="line">     初始值占用多行时, 缩进<span class="number">2</span>个空格.</span><br><span class="line">    <span class="comment">// Object initializer.</span></span><br><span class="line">	<span class="keyword">var</span> inset = &#123;</span><br><span class="line">	  top: <span class="number">10</span>,</span><br><span class="line">	  right: <span class="number">20</span>,</span><br><span class="line">	  bottom: <span class="number">15</span>,</span><br><span class="line">	  left: <span class="number">12</span></span><br><span class="line">	&#125;;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// Array initializer.</span></span><br><span class="line">	<span class="built_in">this</span>.rows_ = [</span><br><span class="line">	  <span class="string">&#x27;&quot;Slartibartfast&quot; &lt;fjordmaster@magrathea.com&gt;&#x27;</span>,</span><br><span class="line">	  <span class="string">&#x27;&quot;Zaphod Beeblebrox&quot; &lt;theprez@universe.gov&gt;&#x27;</span>,</span><br><span class="line">	  <span class="string">&#x27;&quot;Ford Prefect&quot; &lt;ford@theguide.com&gt;&#x27;</span>,</span><br><span class="line">	  <span class="string">&#x27;&quot;Arthur Dent&quot; &lt;has.no.tea@gmail.com&gt;&#x27;</span>,</span><br><span class="line">	  <span class="string">&#x27;&quot;Marvin the Paranoid Android&quot; &lt;marv@googlemail.com&gt;&#x27;</span>,</span><br><span class="line">	  <span class="string">&#x27;the.mice@magrathea.com&#x27;</span></span><br><span class="line">	];</span><br></pre></td></tr></table></figure>
+<p>3.3 引号的使用<br>单引号 (‘) 优于双引号 (“).<br>当你创建一个包含 HTML 代码的字符串时就知道它的好处了。</p>
+<p>3.4 过长的单行予以换行<br>换行应选择在操作符和标点符号之后。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> (oUser.nAge &lt; <span class="number">30</span></span><br><span class="line">    &amp;&amp; oUser.bIsChecked === <span class="literal">true</span></span><br><span class="line">    || oUser.sName === <span class="string">&#x27;admin&#x27;</span>) &#123;</span><br><span class="line">    <span class="comment">// code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="四、vue规范"><a href="#四、vue规范" class="headerlink" title="四、vue规范"></a>四、vue规范</h3><h4 id="4-1-vue属性书写顺序"><a href="#4-1-vue属性书写顺序" class="headerlink" title="4.1 vue属性书写顺序"></a>4.1 vue属性书写顺序</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">   <span class="comment">//不要忘记了 name 属性</span></span><br><span class="line">    name: <span class="string">&#x27;RangeSlider&#x27;</span>,</span><br><span class="line">    <span class="comment">//组合其它组件</span></span><br><span class="line">    <span class="keyword">extends</span>: &#123;&#125;,</span><br><span class="line">    <span class="comment">//组件属性、变量</span></span><br><span class="line">    props: &#123;</span><br><span class="line">            bar: &#123;&#125;, <span class="comment">// 按字母顺序</span></span><br><span class="line">            foo: &#123;&#125;,</span><br><span class="line">            fooBar: &#123;&#125;,</span><br><span class="line">        &#125;,</span><br><span class="line">    <span class="comment">// 变量</span></span><br><span class="line">    <span class="function"><span class="title">data</span>(<span class="params"></span>)</span> &#123;&#125;,</span><br><span class="line">    computed: &#123;&#125;,</span><br><span class="line">    <span class="comment">//使用其它组件</span></span><br><span class="line">    components: &#123;&#125;,</span><br><span class="line">    <span class="comment">// 方法</span></span><br><span class="line">    watch: &#123;&#125;,</span><br><span class="line">    methods: &#123;&#125;,</span><br><span class="line">    <span class="comment">// 生命周期函数</span></span><br><span class="line">    <span class="function"><span class="title">beforeCreate</span>(<span class="params"></span>)</span> &#123;&#125;,</span><br><span class="line">    <span class="function"><span class="title">mounted</span>(<span class="params"></span>)</span> &#123;&#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-2组件"><a href="#4-2组件" class="headerlink" title="4.2组件"></a>4.2组件</h4><p>组件以驼峰命名  以及书写顺序</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   <span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">my-components</span>&gt;</span><span class="tag">&lt;/<span class="name">my-components</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">  <span class="keyword">import</span> myComponents <span class="keyword">from</span> <span class="string">&#x27;./myComponents.vue&#x27;</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">  <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line">  components: &#123;</span><br><span class="line">      myComponents</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-3-组件引用"><a href="#4-3-组件引用" class="headerlink" title="4.3 组件引用"></a>4.3 组件引用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> myComponentsA <span class="keyword">from</span> <span class="string">&#x27;./myComponentsA.vue&#x27;</span>  </span><br><span class="line"><span class="keyword">import</span> myComponentsB <span class="keyword">from</span> <span class="string">&#x27;./myComponentsB.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> myComponentsC <span class="keyword">from</span> <span class="string">&#x27;./myComponentsC.vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> myComponentsD <span class="keyword">from</span> <span class="string">&#x27;./myComponentsD.vue&#x27;</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  components: &#123;</span><br><span class="line">    myComponentsA,</span><br><span class="line">    myComponentsB,</span><br><span class="line">    myComponentsC,</span><br><span class="line">    myComponentsD,</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-4-事件"><a href="#4-4-事件" class="headerlink" title="4.4 事件"></a>4.4 事件</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">&lt;!-- 不建议 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">v-on:click</span>=<span class="string">&quot;pass()&quot;</span>&gt;</span>pass<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 推荐 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">a</span> @<span class="attr">click</span>=<span class="string">&quot;pass&quot;</span>&gt;</span>pass<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-5-vue页面使用每个-vue-页面中的最外层template下面只能有一个标签"><a href="#4-5-vue页面使用每个-vue-页面中的最外层template下面只能有一个标签" class="headerlink" title="4.5 vue页面使用每个 vue 页面中的最外层template下面只能有一个标签"></a>4.5 vue页面使用每个 vue 页面中的最外层template下面只能有一个标签</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// error</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line">// right</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-6-vue返回上一页"><a href="#4-6-vue返回上一页" class="headerlink" title="4.6 vue返回上一页"></a>4.6 vue返回上一页</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">this.$router.go(-1) //就可以回到上一页。</span><br><span class="line">history.go(-1) //是回到浏览器上一页，但是由于Vue应用是单页应用，浏览器的访问历史未必和Vue的浏览历史相同。</span><br></pre></td></tr></table></figure>
+<h4 id="4-7-通过路由跳转，传递查询内容"><a href="#4-7-通过路由跳转，传递查询内容" class="headerlink" title="4.7 通过路由跳转，传递查询内容"></a>4.7 通过路由跳转，传递查询内容</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">this</span>.$router.push(&#123;</span><br><span class="line">    path: <span class="string">&quot;/path&quot;</span>,</span><br><span class="line">    query:&#123;<span class="attr">query</span>:queryThings&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="4-8-methods-自定义方法命名"><a href="#4-8-methods-自定义方法命名" class="headerlink" title="4.8 methods 自定义方法命名"></a>4.8 methods 自定义方法命名</h4><ol>
+<li>动宾短语（good：jumpPage、openCarInfoDialog）（bad：go、nextPage、show、open、login）</li>
+<li>ajax 方法以 get、post 开头，以 data 结尾（good：getListData、postFormData）（bad：takeData、confirmData、getList、postForm）</li>
+<li>事件方法以 on 开头（onTypeChange、onUsernameInput）</li>
+<li>init、refresh 单词除外</li>
+<li>尽量使用常用单词开头（set、get、open、close、jump）</li>
+<li>驼峰命名（good: getListData）（bad: get_list_data、getlistData）</li>
+</ol>
+<h4 id="4-9-路由的命名"><a href="#4-9-路由的命名" class="headerlink" title="4.9 路由的命名"></a>4.9 路由的命名</h4><p>path和name使用相同的命名</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> 示例：&#123;</span><br><span class="line">    path: &#x27;/merchandise&#x27;, //路由路径</span><br><span class="line">    icon: &#x27;key&#x27;, //icon图标</span><br><span class="line">    name: &#x27;merchandise&#x27;, //路由名称</span><br><span class="line">    title: &#x27;商品&#x27;, //路由标题</span><br><span class="line">    access: 0, //权限代码</span><br><span class="line">    component: main,</span><br><span class="line">    children: [</span><br><span class="line">        &#123; path: &#x27;merchandise-pubish&#x27;, title: &#x27;商品发布&#x27;, name: &#x27;merchandise-pubish&#x27;, component: () =&gt; import(&#x27;@/views/merchandise/pubish.vue&#x27;) &#125;,</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="五、注释规范"><a href="#五、注释规范" class="headerlink" title="五、注释规范"></a>五、注释规范</h3><h4 id="5-1-页面注释规范"><a href="#5-1-页面注释规范" class="headerlink" title="5.1 页面注释规范"></a>5.1 页面注释规范</h4><p>  页面中使用注释划分结构块，注意与css中的注释达成统一格式。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">   <span class="comment">&lt;!-- 头部 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;g-hd&quot;</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- LOGO --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h1</span> <span class="attr">class</span>=<span class="string">&quot;m-logo&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">hred</span>=<span class="string">&quot;#&quot;</span>&gt;</span>LOGO<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- /LOGO --&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 导航 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">&quot;m-nav&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">hred</span>=<span class="string">&quot;#&quot;</span>&gt;</span>NAV1<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">hred</span>=<span class="string">&quot;#&quot;</span>&gt;</span>NAV2<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- /导航 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- /头部 --&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="5-2-函数注释"><a href="#5-2-函数注释" class="headerlink" title="5.2 函数注释"></a>5.2 函数注释</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">* 简述</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* 功能详细描述</span></span><br><span class="line"><span class="comment">*</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param </span>&lt;String&gt; arg1 参数1</span></span><br><span class="line"><span class="comment">* <span class="doctag">@param </span>&lt;Number&gt; arg2 参数2，默认为0</span></span><br><span class="line"><span class="comment">* <span class="doctag">@return </span>&lt;Boolean&gt; 判断xxx是否成功</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fooFunction</span> (<span class="params">arg1, arg2</span>) </span>&#123;</span><br><span class="line">   <span class="comment">// code</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="5-3语句注释"><a href="#5-3语句注释" class="headerlink" title="5.3语句注释"></a>5.3语句注释</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">   #单独一行 //(双斜线)与注释文字之间保留一个空格；</span><br><span class="line">   #在代码后面添加注释：//(双斜线)与代码之间保留一个空格，并且//(双斜线)与注释文字之间保留一个空格；</span><br><span class="line">   #//(双斜线)与代码之间保留一个空格。</span><br><span class="line">  </span><br><span class="line"><span class="comment">// 调用了一个函数；1)单独在一行</span></span><br><span class="line">setTitle();</span><br><span class="line"><span class="keyword">var</span> maxCount = <span class="number">10</span>; <span class="comment">// 设置最大量；2)在代码后面注释</span></span><br><span class="line"><span class="comment">// setName(); // 3)注释代码</span></span><br></pre></td></tr></table></figure>
+
+                <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2021年03月08日 15:23</p>
+        <p>原始链接： <a class="post-url" href="/2021/03/08/code-rule-mag/" title="编码规范">https://www.91temaichang/2021/03/08/code-rule-mag/</a></p>
+        <footer>
+            <a href="https://www.91temaichang">
+                <img src="/images/logo.png" alt="Genglin Zheng">
+                Genglin Zheng
+            </a>
+        </footer>
+    </div>
+</div>
+
+            
+            
+                
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" style="width: 100%;" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+            
+        </div>
+        <footer class="article-footer">
+            
+                
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.91temaichang/2021/03/08/code-rule-mag/&title=《编码规范》 — Zhenggl's Blog&pic=https://img.91temaichang.com/blog/code-rule.jpeg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.91temaichang/2021/03/08/code-rule-mag/&title=《编码规范》 — Zhenggl's Blog&source=专注于大前端行业领域的学习，javascript，css，html，react，android，ios，react-native，Node.js，webp..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.91temaichang/2021/03/08/code-rule-mag/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《编码规范》 — Zhenggl's Blog&url=https://www.91temaichang/2021/03/08/code-rule-mag/&via=https://www.91temaichang" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.91temaichang/2021/03/08/code-rule-mag/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.91temaichang/2021/03/08/code-rule-mag/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+            
+            <ul class="article-footer-menu">
+                
+                
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/编码规范/" class="color5">编码规范</a>
+      
+    <a href="/tags/javascript/" class="color1">javascript</a>
+      
+    <a href="/tags/css/" class="color4">css</a>
+      
+  </li>
+
+            </ul>
+            
+        </footer>
+    </div>
+</article>
+
+    
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81css%E8%A7%84%E8%8C%83"><span class="post-toc-text">一、css规范</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-1-css%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="post-toc-text">1.1 css命名规则</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-2-%E5%B1%9E%E6%80%A7%E9%A1%BA%E5%BA%8F"><span class="post-toc-text">1.2 属性顺序</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-3-%E9%80%89%E6%8B%A9%E5%99%A8%E5%A6%82%E6%97%A0%E5%BF%85%E8%A6%81"><span class="post-toc-text">1.3 选择器如无必要</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-4-%E5%A4%9A%E4%B8%AA%E9%80%89%E6%8B%A9%E5%99%A8%E5%85%AC%E7%94%A8%E7%9B%B8%E5%90%8C%E5%B1%9E%E6%80%A7%E6%97%B6"><span class="post-toc-text">1.4 多个选择器公用相同属性时</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81JS%E8%A7%84%E8%8C%83"><span class="post-toc-text">二、JS规范</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-%E6%96%87%E4%BB%B6%E5%91%BD%E5%90%8D"><span class="post-toc-text">2.1 文件命名</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-%E8%AF%AD%E8%A8%80%E8%A7%84%E8%8C%83"><span class="post-toc-text">2.2 语言规范</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E7%BC%96%E7%A0%81%E9%A3%8E%E6%A0%BC"><span class="post-toc-text">三、编码风格</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81vue%E8%A7%84%E8%8C%83"><span class="post-toc-text">四、vue规范</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-1-vue%E5%B1%9E%E6%80%A7%E4%B9%A6%E5%86%99%E9%A1%BA%E5%BA%8F"><span class="post-toc-text">4.1 vue属性书写顺序</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-2%E7%BB%84%E4%BB%B6"><span class="post-toc-text">4.2组件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-3-%E7%BB%84%E4%BB%B6%E5%BC%95%E7%94%A8"><span class="post-toc-text">4.3 组件引用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-4-%E4%BA%8B%E4%BB%B6"><span class="post-toc-text">4.4 事件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-5-vue%E9%A1%B5%E9%9D%A2%E4%BD%BF%E7%94%A8%E6%AF%8F%E4%B8%AA-vue-%E9%A1%B5%E9%9D%A2%E4%B8%AD%E7%9A%84%E6%9C%80%E5%A4%96%E5%B1%82template%E4%B8%8B%E9%9D%A2%E5%8F%AA%E8%83%BD%E6%9C%89%E4%B8%80%E4%B8%AA%E6%A0%87%E7%AD%BE"><span class="post-toc-text">4.5 vue页面使用每个 vue 页面中的最外层template下面只能有一个标签</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#4-6-vue%E8%BF%94%E5%9B%9E%E4%B8%8A%E4%B8%80%E9%A1%B5"><span class="post-toc-text">4.6 vue返回上一页</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-7-%E9%80%9A%E8%BF%87%E8%B7%AF%E7%94%B1%E8%B7%B3%E8%BD%AC%EF%BC%8C%E4%BC%A0%E9%80%92%E6%9F%A5%E8%AF%A2%E5%86%85%E5%AE%B9"><span class="post-toc-text">4.7 通过路由跳转，传递查询内容</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-8-methods-%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%B9%E6%B3%95%E5%91%BD%E5%90%8D"><span class="post-toc-text">4.8 methods 自定义方法命名</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-9-%E8%B7%AF%E7%94%B1%E7%9A%84%E5%91%BD%E5%90%8D"><span class="post-toc-text">4.9 路由的命名</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%94%E3%80%81%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83"><span class="post-toc-text">五、注释规范</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-1-%E9%A1%B5%E9%9D%A2%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83"><span class="post-toc-text">5.1 页面注释规范</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-2-%E5%87%BD%E6%95%B0%E6%B3%A8%E9%87%8A"><span class="post-toc-text">5.2 函数注释</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-3%E8%AF%AD%E5%8F%A5%E6%B3%A8%E9%87%8A"><span class="post-toc-text">5.3语句注释</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+    
+<nav id="article-nav">
+  
+    <a href="/2021/03/08/js-basic-data-type/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          javascript数据类型
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2021/03/08/verdaccio-custom-npm/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">通过verdaccio服务搭建内部npm管理</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="code-rule-mag" ></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyvl74M4O';
+        var conf = '721d35beb05a2559bb4a448877fe17b9';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2021 Genglin Zheng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://www.91temaichang",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/javascript/">javascript</a><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/javascript/%E5%9F%BA%E7%A1%80/">基础</a><a class="category-link" href="/categories/%E7%A7%AF%E7%B4%AF%E4%B8%8E%E6%B2%89%E6%B7%80/">积累与沉淀</a><a class="category-link" href="/categories/%E7%A7%AF%E7%B4%AF%E4%B8%8E%E6%B2%89%E6%B7%80/%E7%BC%96%E7%A0%81%E4%B8%8E%E7%AE%A1%E7%90%86/">编码与管理</a><a class="category-link" href="/categories/%E7%A7%AF%E7%B4%AF%E4%B8%8E%E6%B2%89%E6%B7%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1/">自定义服务</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/netlify/" style="font-size: 10px;">netlify</a> <a href="/tags/npm/" style="font-size: 20px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/verdaccio/" style="font-size: 10px;">verdaccio</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">基础概念</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编码规范</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>分类</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Node-js/" style="font-size: 20px;">Node.js</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/netlify/" style="font-size: 10px;">netlify</a> <a href="/tags/npm/" style="font-size: 20px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/verdaccio/" style="font-size: 10px;">verdaccio</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" style="font-size: 10px;">基础概念</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编码规范</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

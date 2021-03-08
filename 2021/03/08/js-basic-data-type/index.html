@@ -3,25 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo安装与配置服务升级 | Zhenggl&#39;s Blog</title>
+  <title>javascript数据类型 | Zhenggl&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="zhenggl, javascript，css，html，react，android，ios，react-native，Node.js，webpack，gulp，小程序" />
   
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="请注意：JS的数据类型有8种 一、JS数据类型的结构在ES5的时候，我们所知晓的数据类型有6种：Number、String、Boolean、undefined、Null、object。ES6中新增一种Symbol，这种类型的对象永不相等，即使创建的时候传入相同的值，可以用来解决属性名冲突的问题，作为标记。谷歌67版本还出现了一种bigInt，是指安全存储、操作大整数。 根据上面描述，我们可以整理出">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo安装与配置服务升级">
-<meta property="og:url" content="https://www.91temaichang/2021/03/04/hello-world/index.html">
+<meta property="og:title" content="javascript数据类型">
+<meta property="og:url" content="https://www.91temaichang/2021/03/08/js-basic-data-type/index.html">
 <meta property="og:site_name" content="Zhenggl&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="请注意：JS的数据类型有8种 一、JS数据类型的结构在ES5的时候，我们所知晓的数据类型有6种：Number、String、Boolean、undefined、Null、object。ES6中新增一种Symbol，这种类型的对象永不相等，即使创建的时候传入相同的值，可以用来解决属性名冲突的问题，作为标记。谷歌67版本还出现了一种bigInt，是指安全存储、操作大整数。 根据上面描述，我们可以整理出">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-03-04T03:31:31.631Z">
-<meta property="article:modified_time" content="2021-03-07T17:41:08.036Z">
+<meta property="og:image" content="https://img.91temaichang.com/blog/js-data-type-struture.png">
+<meta property="article:published_time" content="2021-03-08T09:59:24.000Z">
+<meta property="article:modified_time" content="2021-03-08T10:31:14.419Z">
 <meta property="article:author" content="Genglin Zheng">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="npm">
-<meta property="article:tag" content="Node.js">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="基础概念">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.91temaichang.com/blog/js-data-type-struture.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -117,7 +118,7 @@
 </header>
 
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope
+        <section id="main" class="body-wrap"><article id="post-js-basic-data-type" class="article article-type-post" itemscope
          itemprop="blogPost">
     <div class="article-inner">
         
@@ -125,13 +126,30 @@
                 
   
     <h1 class="post-title" itemprop="name">
-      Hexo安装与配置服务升级
+      javascript数据类型
     </h1>
     <div class="post-title-bar">
       <ul>
           
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端/">
+                        前端
+                      </a>
+                  
+                      <a href="/categories/javascript/">
+                        javascript
+                      </a>
+                  
+                      <a href="/categories/基础/">
+                        基础
+                      </a>
+                  
+              </li>
+          
         <li>
-          <i class="fa fa-calendar"></i>  2021-03-04
+          <i class="fa fa-calendar"></i>  2021-03-08
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -148,24 +166,20 @@
         <div class="article-entry post-content" itemprop="articleBody">
             
                 
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <p><em><strong>请注意：JS的数据类型有8种</strong></em></p>
+<h3 id="一、JS数据类型的结构"><a href="#一、JS数据类型的结构" class="headerlink" title="一、JS数据类型的结构"></a>一、JS数据类型的结构</h3><p>在ES5的时候，我们所知晓的数据类型有6种：<code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>undefined</code>、<code>Null</code>、<code>object</code>。<br>ES6中新增一种Symbol，这种类型的对象永不相等，即使创建的时候传入相同的值，可以用来解决属性名冲突的问题，作为标记。<br>谷歌67版本还出现了一种bigInt，是指安全存储、操作大整数。</p>
+<p>根据上面描述，我们可以整理出对应如下的结构图：<br><img src="https://img.91temaichang.com/blog/js-data-type-struture.png" alt="JS数据类型结构图"></p>
+<p>可以将js的8中数据类型拆分为3个大类：基本数据类型 + 对象类型 + 其他类型<br>然后基本数据类型包含：<code>Number</code>、<code>String</code>、<code>Boolean</code>、<code>undefined</code>、<code>Null</code>，<br>对象类型(object)包含：<code>function</code>、<code>array</code>、<code>date</code></p>
+<h3 id="二、实际场景下，容易混淆的情况"><a href="#二、实际场景下，容易混淆的情况" class="headerlink" title="二、实际场景下，容易混淆的情况"></a>二、实际场景下，容易混淆的情况</h3><h4 id="2-1-JS中typeof输入分别是什么"><a href="#2-1-JS中typeof输入分别是什么" class="headerlink" title="2.1 JS中typeof输入分别是什么"></a>2.1 JS中typeof输入分别是什么</h4><ol>
+<li>typeof {} 与 typeof [] 输出的都是object；</li>
+<li>typeof console.info 输出的是function；</li>
+</ol>
+<p><em><code>有一点需要注意：NaN是Number中的一种，非Number</code></em></p>
 
                 <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2021年03月08日 01:41</p>
-        <p>原始链接： <a class="post-url" href="/2021/03/04/hello-world/" title="Hexo安装与配置服务升级">https://www.91temaichang/2021/03/04/hello-world/</a></p>
+        <p>最后更新： 2021年03月08日 18:31</p>
+        <p>原始链接： <a class="post-url" href="/2021/03/08/js-basic-data-type/" title="javascript数据类型">https://www.91temaichang/2021/03/08/js-basic-data-type/</a></p>
         <footer>
             <a href="https://www.91temaichang">
                 <img src="/images/logo.png" alt="Genglin Zheng">
@@ -222,7 +236,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.91temaichang/2021/03/04/hello-world/&title=《Hexo安装与配置服务升级》 — Zhenggl's Blog&pic=http://img.91temaichang.com/blog/default-cover.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.91temaichang/2021/03/08/js-basic-data-type/&title=《javascript数据类型》 — Zhenggl's Blog&pic=https://img.91temaichang.com/blog/js-data-type.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -232,22 +246,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.91temaichang/2021/03/04/hello-world/&title=《Hexo安装与配置服务升级》 — Zhenggl's Blog&source=专注于大前端行业领域的学习，javascript，css，html，react，android，ios，react-native，Node.js，webp..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.91temaichang/2021/03/08/js-basic-data-type/&title=《javascript数据类型》 — Zhenggl's Blog&source=专注于大前端行业领域的学习，javascript，css，html，react，android，ios，react-native，Node.js，webp..." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.91temaichang/2021/03/04/hello-world/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.91temaichang/2021/03/08/js-basic-data-type/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Hexo安装与配置服务升级》 — Zhenggl's Blog&url=https://www.91temaichang/2021/03/04/hello-world/&via=https://www.91temaichang" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《javascript数据类型》 — Zhenggl's Blog&url=https://www.91temaichang/2021/03/08/js-basic-data-type/&via=https://www.91temaichang" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.91temaichang/2021/03/04/hello-world/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.91temaichang/2021/03/08/js-basic-data-type/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -257,7 +271,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.91temaichang/2021/03/04/hello-world/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.91temaichang/2021/03/08/js-basic-data-type/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -269,11 +283,9 @@
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/Hexo/" class="color5">Hexo</a>
+    <a href="/tags/javascript/" class="color1">javascript</a>
       
-    <a href="/tags/npm/" class="color4">npm</a>
-      
-    <a href="/tags/Node.js/" class="color3">Node.js</a>
+    <a href="/tags/基础概念/" class="color5">基础概念</a>
       
   </li>
 
@@ -286,7 +298,7 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BB%93%E6%9E%84"><span class="post-toc-text">一、JS数据类型的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%99%85%E5%9C%BA%E6%99%AF%E4%B8%8B%EF%BC%8C%E5%AE%B9%E6%98%93%E6%B7%B7%E6%B7%86%E7%9A%84%E6%83%85%E5%86%B5"><span class="post-toc-text">二、实际场景下，容易混淆的情况</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-JS%E4%B8%ADtypeof%E8%BE%93%E5%85%A5%E5%88%86%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="post-toc-text">2.1 JS中typeof输入分别是什么</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -294,23 +306,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2021/03/07/hexo-github-netify/" id="article-nav-newer" class="article-nav-link-wrap">
-
-      <span class="article-nav-title">
-        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
-        
-          Hexo + github + netlify搭建自己的博客系统
-        
-      </span>
-    </a>
   
+    <a href="/2021/03/08/code-rule-mag/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">编码规范</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
   
 </nav>
 
 
 
     
-        <div id="SOHUCS" sid="hello-world" ></div>
+        <div id="SOHUCS" sid="js-basic-data-type" ></div>
 <script type="text/javascript">
     (function(){
         var appid = 'cyvl74M4O';

@@ -1003,6 +1003,9 @@ body {
   margin-bottom: 0.8em;
   font-size: 16px;
 }
+.article-entry li img {
+  max-width: 100%;
+}
 .article-entry p img,
 .article-entry p video {
   max-width: 100%;
