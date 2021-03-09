@@ -16,8 +16,13 @@
 <meta property="og:description" content="请注意：JS的数据类型有8种 一、JS数据类型的结构在ES5的时候，我们所知晓的数据类型有6种：Number、String、Boolean、undefined、Null、object。ES6中新增一种Symbol，这种类型的对象永不相等，即使创建的时候传入相同的值，可以用来解决属性名冲突的问题，作为标记。谷歌67版本还出现了一种bigInt，是指安全存储、操作大整数。 根据上面描述，我们可以整理出">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://img.91temaichang.com/blog/js-data-type-struture.png">
+<meta property="og:image" content="https://img.91temaichang.com/blog/WX20210309-184249.png">
+<meta property="og:image" content="https://img.91temaichang.com/blog/WX20210309-185011.png">
+<meta property="og:image" content="https://img.91temaichang.com/blog/WX20210309-185237.png">
+<meta property="og:image" content="https://img.91temaichang.com/blog/WX20210309-185616.png">
+<meta property="og:image" content="https://img.91temaichang.com/blog/WX20210309-185747.png">
 <meta property="article:published_time" content="2021-03-08T09:59:24.000Z">
-<meta property="article:modified_time" content="2021-03-08T10:31:14.419Z">
+<meta property="article:modified_time" content="2021-03-09T11:21:41.207Z">
 <meta property="article:author" content="Genglin Zheng">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="基础概念">
@@ -175,10 +180,85 @@
 <li>typeof console.info 输出的是function；</li>
 </ol>
 <p><em><code>有一点需要注意：NaN是Number中的一种，非Number</code></em></p>
+<p><code>关于isNaN的注意点</code></p>
+<ol>
+<li>用isNaN()检测是否是非数值类型，如下图：<br><img src="https://img.91temaichang.com/blog/WX20210309-184249.png" alt="isNaN"></li>
+<li>Number(‘123’) == NaN?，这里Number(‘123’)输出的是123，123是不等于NaN的，因此为false</li>
+</ol>
+<h3 id="三、如何判断数据类型？"><a href="#三、如何判断数据类型？" class="headerlink" title="三、如何判断数据类型？"></a>三、如何判断数据类型？</h3><h4 id="3-1-上面有提及到"><a href="#3-1-上面有提及到" class="headerlink" title="3.1 上面有提及到"></a>3.1 上面有提及到</h4><h4 id="3-2-toString"><a href="#3-2-toString" class="headerlink" title="3.2 toString()"></a>3.2 toString()</h4><p>函数作用：其他类型转成string的方法<br>支持的数据类型有：number、boolean、string、object<br>不支持的数据类型有：null、undefined</p>
+<h4 id="3-3-toLocalString"><a href="#3-3-toLocalString" class="headerlink" title="3.3 toLocalString()"></a>3.3 toLocalString()</h4><p>函数作用：将数组转成本地字符串</p>
+<p><img src="https://img.91temaichang.com/blog/WX20210309-185011.png" alt="toLocalString"></p>
+<h4 id="3-4-检测数据类型的方法"><a href="#3-4-检测数据类型的方法" class="headerlink" title="3.4 检测数据类型的方法"></a>3.4 检测数据类型的方法</h4><ol>
+<li>instanceof 操作符</li>
+</ol>
+<p><img src="https://img.91temaichang.com/blog/WX20210309-185237.png" alt="instanceof 操作符"></p>
+<ol start="2">
+<li>对象的constructor属性</li>
+</ol>
+<p><img src="https://img.91temaichang.com/blog/WX20210309-185616.png" alt="利用对象的contructor属性"></p>
+<ol start="3">
+<li>Array.isArray()检查数据是否为数组</li>
+</ol>
+<p><img src="https://img.91temaichang.com/blog/WX20210309-185747.png" alt="利用Array.isArray"></p>
+<h3 id="四、null与undefined有什么区别？"><a href="#四、null与undefined有什么区别？" class="headerlink" title="四、null与undefined有什么区别？"></a>四、null与undefined有什么区别？</h3><p>Null只有一个值，是null，一个不存在的对象；<br>undefined只有一个值，是undefined，没有初始化，undefined是从null中派生出来的。<br>简单理解就是：undefined是没有定义的，null就是定义了变量，但没有给变量赋值。</p>
+<h3 id="五、-与-有什么区别，一般在什么场景下使用？"><a href="#五、-与-有什么区别，一般在什么场景下使用？" class="headerlink" title="五、== 与 === 有什么区别，一般在什么场景下使用？"></a>五、== 与 === 有什么区别，一般在什么场景下使用？</h3><p>==：表示相同。比较的是物理地址，相当于比较两个对象的hashCode，肯定不相等的。类型不相同，值也可能相等。比如 ‘1’ == 1 为true；<br>===：表示严格相同，严格判断类型是否相同。</p>
+<h3 id="六、总结："><a href="#六、总结：" class="headerlink" title="六、总结："></a>六、总结：</h3><ol>
+<li>undefined类型，只有一个值，在使用var/let/const来声明变量但为对其进行初始化的时候，这个变量就是undefined;</li>
+<li>null类型，只有一个值，null表示一个空对象指针，这也就是为毛typeof null返回的是object的原因；</li>
+<li>Boolean类型，只有true/false两个值，true不一定等于1，false不一定等于0；</li>
+<li>Number类型，数字类型，表示数据的整数和浮点数</li>
+<li>String类型，字符串，可用单引号也可以用双引号表示，字符串不可改变(<code>一般任何的基本数据类型都是不可改变的</code>)，改变某个变量保存的字符串，首先要销毁原来的字符串，然后用另一个字符串来填充。</li>
+<li>Object类型， ES5中的对象其实就是一组数据和函数的集合体，对象可以通过new操作符来创建，创建object类型的实例并为其添加属性或方法，就可以自定义创建对象，如下：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br></pre></td></tr></table></figure>
+object的每个实例都有以下属性和方法：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>属性名称</th>
+<th>类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>constructor</td>
+<td>function</td>
+<td>保存着用于创建当前对象的函数，构造函数constructor就是object()</td>
+</tr>
+<tr>
+<td>hasOwnProperty(propertyName)</td>
+<td>function</td>
+<td>用于检查给定的propertyName属性是否在当前对象实例中，而不是在他的原型中</td>
+</tr>
+<tr>
+<td>isPrototypeOf(Object)</td>
+<td>function</td>
+<td>用于检查传入的对象是否是对象原型</td>
+</tr>
+<tr>
+<td>propertyIsEnumerable(propertyName)</td>
+<td>function</td>
+<td>属性是否可被枚举，是否可以被使用for-in语句</td>
+</tr>
+<tr>
+<td>toLocaleString()</td>
+<td>function</td>
+<td>返回对象的执行环境地区字符串表示</td>
+</tr>
+<tr>
+<td>toString()</td>
+<td>function</td>
+<td>返回对象的字符串表示</td>
+</tr>
+<tr>
+<td>valueOf()</td>
+<td>function</td>
+<td>返回对象的字符串表示，通常与toString返回的一致</td>
+</tr>
+</tbody></table>
 
                 <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2021年03月08日 18:31</p>
+        <p>最后更新： 2021年03月09日 19:21</p>
         <p>原始链接： <a class="post-url" href="/2021/03/08/js-basic-data-type/" title="javascript数据类型">https://www.91temaichang/2021/03/08/js-basic-data-type/</a></p>
         <footer>
             <a href="https://www.91temaichang">
@@ -298,7 +378,7 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BB%93%E6%9E%84"><span class="post-toc-text">一、JS数据类型的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%99%85%E5%9C%BA%E6%99%AF%E4%B8%8B%EF%BC%8C%E5%AE%B9%E6%98%93%E6%B7%B7%E6%B7%86%E7%9A%84%E6%83%85%E5%86%B5"><span class="post-toc-text">二、实际场景下，容易混淆的情况</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-JS%E4%B8%ADtypeof%E8%BE%93%E5%85%A5%E5%88%86%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="post-toc-text">2.1 JS中typeof输入分别是什么</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81JS%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%BB%93%E6%9E%84"><span class="post-toc-text">一、JS数据类型的结构</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%AE%9E%E9%99%85%E5%9C%BA%E6%99%AF%E4%B8%8B%EF%BC%8C%E5%AE%B9%E6%98%93%E6%B7%B7%E6%B7%86%E7%9A%84%E6%83%85%E5%86%B5"><span class="post-toc-text">二、实际场景下，容易混淆的情况</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-JS%E4%B8%ADtypeof%E8%BE%93%E5%85%A5%E5%88%86%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="post-toc-text">2.1 JS中typeof输入分别是什么</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="post-toc-text">三、如何判断数据类型？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-%E4%B8%8A%E9%9D%A2%E6%9C%89%E6%8F%90%E5%8F%8A%E5%88%B0"><span class="post-toc-text">3.1 上面有提及到</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-toString"><span class="post-toc-text">3.2 toString()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-toLocalString"><span class="post-toc-text">3.3 toLocalString()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-4-%E6%A3%80%E6%B5%8B%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%96%B9%E6%B3%95"><span class="post-toc-text">3.4 检测数据类型的方法</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81null%E4%B8%8Eundefined%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="post-toc-text">四、null与undefined有什么区别？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%94%E3%80%81-%E4%B8%8E-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%8C%E4%B8%80%E8%88%AC%E5%9C%A8%E4%BB%80%E4%B9%88%E5%9C%BA%E6%99%AF%E4%B8%8B%E4%BD%BF%E7%94%A8%EF%BC%9F"><span class="post-toc-text">五、&#x3D;&#x3D; 与 &#x3D;&#x3D;&#x3D; 有什么区别，一般在什么场景下使用？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%AD%E3%80%81%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="post-toc-text">六、总结：</span></a></li></ol>
         </nav>
     </aside>
     
