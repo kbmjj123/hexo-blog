@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>立即执行的js函数有毛用？ | Zhenggl&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="zhenggl, javascript，css，html，react，android，ios，react-native，Node.js，webpack，gulp，小程序" />
+  
+  <meta name="description" content="js立即执行的函数可以让函数在创建之后立马执行，这种编写模式本质上就是函数表达式(命名的或者匿名的)，在创建之后立即执行 一、立即执行函数的写法 一般立即执行的函数，都是正常写一js函数(命名或者匿名的)，然后用一()将整个函数包括函数给括起来，然后再加一()紧跟随其后，有需要的就对应传递相关函数调用参数 1234567&#x2F;&#x2F; 匿名函数第一种写法：匿名函数包裹在一个括号运算符中，后面跟一个小括号(f">
+<meta property="og:type" content="article">
+<meta property="og:title" content="立即执行的js函数有毛用？">
+<meta property="og:url" content="https://www.91temaichang/2021/03/15/exec-immediately-func/index.html">
+<meta property="og:site_name" content="Zhenggl&#39;s Blog">
+<meta property="og:description" content="js立即执行的函数可以让函数在创建之后立马执行，这种编写模式本质上就是函数表达式(命名的或者匿名的)，在创建之后立即执行 一、立即执行函数的写法 一般立即执行的函数，都是正常写一js函数(命名或者匿名的)，然后用一()将整个函数包括函数给括起来，然后再加一()紧跟随其后，有需要的就对应传递相关函数调用参数 1234567&#x2F;&#x2F; 匿名函数第一种写法：匿名函数包裹在一个括号运算符中，后面跟一个小括号(f">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.91temaichang.com/blog/immedialtely-js.png">
+<meta property="og:image" content="https://img.91temaichang.com/blog/immediately-js-result.png">
+<meta property="article:published_time" content="2021-03-15T01:37:18.000Z">
+<meta property="article:modified_time" content="2021-03-15T03:08:31.680Z">
+<meta property="article:author" content="Genglin Zheng">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="基础">
+<meta property="article:tag" content="function">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.91temaichang.com/blog/immedialtely-js.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+<script src="/js/pace.min.js"></script>
+
+  
+
+  
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?ea1e17cf6caa0f77798bde507393cb94";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+  
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">一个专注于大前端的技术博客</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>标签</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo" id="logo-img">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        一个专注于大前端的技术博客
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        不是井里没有水，而是你挖的不够深
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Zhenggl" target="_blank" href="//91temaichang.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/kbmjj123">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="QQ" target="_blank" ">
+                            <i class="fa fa-qq fa-2x"></i></a>
+                    
+                        <a title="Weixin" target="_blank" ">
+                            <i class="fa fa-weixin fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-exec-immediately-func" class="article article-type-post" itemscope
+         itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 class="post-title" itemprop="name">
+      立即执行的js函数有毛用？
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端/">
+                        前端
+                      </a>
+                  
+                      <a href="/categories/javascript/">
+                        javascript
+                      </a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2021-03-15
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+
+                
+            </header>
+        
+        <div class="article-entry post-content" itemprop="articleBody">
+            
+                
+                <p><strong>js立即执行的函数可以让函数在创建之后立马执行，这种编写模式本质上就是函数表达式(命名的或者匿名的)，在创建之后立即执行</strong></p>
+<h3 id="一、立即执行函数的写法"><a href="#一、立即执行函数的写法" class="headerlink" title="一、立即执行函数的写法"></a>一、立即执行函数的写法</h3><p><img src="https://img.91temaichang.com/blog/immedialtely-js.png" alt="立即执行函数写法"></p>
+<p>一般立即执行的函数，都是正常写一js函数(命名或者匿名的)，然后用一()将整个函数包括函数给括起来，然后再加一()紧跟随其后，有需要的就对应传递相关函数调用参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 匿名函数第一种写法：匿名函数包裹在一个括号运算符中，后面跟一个小括号</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.info(<span class="string">&#x27;hello&#x27;</span>)&#125;)();      <span class="comment">//输出hello</span></span><br><span class="line"><span class="comment">// 匿名函数第二种写法：匿名函数后面跟一个小括号，整个包裹在一个括号运算符中</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="built_in">console</span>.info(<span class="string">&#x27;hello&#x27;</span>)&#125;);</span><br><span class="line">(<span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;<span class="keyword">return</span> x + y;&#125;)(<span class="number">1</span>, <span class="number">2</span>);  <span class="comment">//输出3</span></span><br><span class="line"><span class="comment">// 错误的写法</span></span><br><span class="line"><span class="comment">// function()&#123;&#125;();</span></span><br></pre></td></tr></table></figure>
+<p>上述第三种写法报错：Uncaught SyntaxError: Unexpected token{<br>js词法引擎在解析function关键词之后，认为后面跟随的是函数定义语句，而在一条语句后面加上()会被当作分组操作符，<br>分组操作符必须要有表达式，所以这里报错，不应该以圆括号结尾，以圆括号结尾，引擎就会认为后面跟的是一个表达式，而不是函数定义。</p>
+<p><strong><code>(), !, +, -, ~, new 等运算符都能够起到立即执行的作用，这些运算符的作用就是将匿名/具名函数声明转换为函数表达式</code></strong></p>
+<p><strong><code>要注意两点，一是函数体后要有小括号()，二是函数体必须是函数表达式而不是函数声明</code></strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">test</span>)</span>&#123;<span class="built_in">console</span>.info(test)&#125;)(<span class="number">123</span>);  <span class="comment">//使用()运算符，输出123</span></span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">test</span>)</span>&#123;<span class="built_in">console</span>.info(test)&#125;(<span class="number">123</span>));  <span class="comment">//使用()运算符，输出123</span></span><br><span class="line"></span><br><span class="line">!<span class="function"><span class="keyword">function</span>(<span class="params">test</span>)</span>&#123;<span class="built_in">console</span>.info(test)&#125;(<span class="number">123</span>);  <span class="comment">//使用!运算符，输出123</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params">test</span>)</span>&#123;<span class="built_in">console</span>.info(test)&#125;(<span class="number">123</span>); <span class="comment">//使用=运算法，输出123</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="二、立即执行函数的作用"><a href="#二、立即执行函数的作用" class="headerlink" title="二、立即执行函数的作用"></a>二、立即执行函数的作用</h3><p>立即执行的函数只有一个作用：创建一个独立的作用域，这个作用域里面的变量，外面访问不了(即避免了变量的污染)。<br>比如，有一面试题：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> liList = ul.getElementsByTagName(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i ++)&#123;</span><br><span class="line">	liList.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出：6,6,6,6,6,6<br>原因：为毛上述的输出总是6呢？im因为输出的i是全局作用域的，当循环结束后i的值是6，所以i输出的就是6<br>幅图：</p>
+<p><img src="https://img.91temaichang.com/blog/immediately-js-result.png" alt="幅图"></p>
+<p>解决方案：</p>
+<p>用立即执行函数给每个li创造一个独立作用域即可</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> liList = ul.getElementsByTagName(<span class="string">&#x27;li&#x27;</span>);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i ++)&#123;</span><br><span class="line">	liList.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		alert(i);</span><br><span class="line">	&#125;(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="三、与闭包的区别"><a href="#三、与闭包的区别" class="headerlink" title="三、与闭包的区别"></a>三、与闭包的区别</h3><p>setTimeout依次输出0 1 2 3 4 5</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">6</span>; i ++)&#123;</span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">	<span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">		<span class="built_in">console</span>.info(i);</span><br><span class="line">	&#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;)(i);</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="built_in">console</span>.info(i);  <span class="comment">//输出5，因为for循环后i就会变成5</span></span><br></pre></td></tr></table></figure>
+<p>解析：第一个5很好输出，因为已经过了一个for循环，因此值变为5，剩下的交给立即执行函数来执行，首先js中调用函数传参都是值传参，<br>所以当立即执行函数执行时，首先会将i给copy一份，然后再创建函数作用域来执行函数，循环5次，就会对应创建5个作用域，所以1秒后几乎会同时输出0 1 2 3 4 5，<br>这里同时输出，并没有1秒输出，这里需要了解下js的event loop机制</p>
+<p><strong>立即执行函数与闭包没有什么关系，只是两者会经常结合在一起使用而已，但两者有本质的不同</strong><br>立即执行函数和闭包只是有一个共同优点就是能减少全局变量的使用。</p>
+<p>立即执行函数只是函数的一种调用方式，只是声明完之后立即执行，这类函数一般都只是调用一次，调用完之后会立即销毁，不会占用内存。</p>
+<p>闭包则主要是让外部函数可以访问内部函数的作用域，也减少了全局变量的使用，保证了内部变量的安全，但因被引用的内部变量不能被销毁，增大了内存消耗，使用不当易造成内存泄露。</p>
+<h3 id="四、使用场景"><a href="#四、使用场景" class="headerlink" title="四、使用场景"></a>四、使用场景</h3><ol>
+<li>你的代码在页面加载完成之后，不得不执行一些设置工作，比如时间处理器，创建对象等等；</li>
+<li>所有这些工作只需要执行一次，比如只需要显示一个时间；</li>
+<li>但是这些代码也需要一些临时的变量，然后在初始化结束之后，就再也不会被用到，如果将这些变量作为全局变量，可能会被全局污染到。</li>
+</ol>
+
+                <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2021年03月15日 11:08</p>
+        <p>原始链接： <a class="post-url" href="/2021/03/15/exec-immediately-func/" title="立即执行的js函数有毛用？">https://www.91temaichang/2021/03/15/exec-immediately-func/</a></p>
+        <footer>
+            <a href="https://www.91temaichang">
+                <img src="/images/logo.png" alt="Genglin Zheng">
+                Genglin Zheng
+            </a>
+        </footer>
+    </div>
+</div>
+
+            
+            
+                
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" style="width: 100%;" src="/images/wechat_code.png" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.png">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.png">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+            
+        </div>
+        <footer class="article-footer">
+            
+                
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.91temaichang/2021/03/15/exec-immediately-func/&title=《立即执行的js函数有毛用？》 — Zhenggl's Blog&pic=https://img.91temaichang.com/blog/js-data-type.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.91temaichang/2021/03/15/exec-immediately-func/&title=《立即执行的js函数有毛用？》 — Zhenggl's Blog&source=专注于大前端行业领域的学习，javascript，css，html，react，android，ios，react-native，Node.js，webp..." data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.91temaichang/2021/03/15/exec-immediately-func/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《立即执行的js函数有毛用？》 — Zhenggl's Blog&url=https://www.91temaichang/2021/03/15/exec-immediately-func/&via=https://www.91temaichang" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.91temaichang/2021/03/15/exec-immediately-func/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.91temaichang/2021/03/15/exec-immediately-func/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+            
+            <ul class="article-footer-menu">
+                
+                
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/javascript/" class="color1">javascript</a>
+      
+    <a href="/tags/基础/" class="color3">基础</a>
+      
+    <a href="/tags/function/" class="color4">function</a>
+      
+  </li>
+
+            </ul>
+            
+        </footer>
+    </div>
+</article>
+
+    
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%E7%9A%84%E5%86%99%E6%B3%95"><span class="post-toc-text">一、立即执行函数的写法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E7%AB%8B%E5%8D%B3%E6%89%A7%E8%A1%8C%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="post-toc-text">二、立即执行函数的作用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E4%B8%8E%E9%97%AD%E5%8C%85%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="post-toc-text">三、与闭包的区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="post-toc-text">四、使用场景</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/12/css-study-structure/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">玩转CSS</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="exec-immediately-func" ></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyvl74M4O';
+        var conf = '721d35beb05a2559bb4a448877fe17b9';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2021 Genglin Zheng<br>
+      </p>
+    </div>
+  </div>
+</footer>
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://www.91temaichang",
+      animate: false,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/css/">css</a><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/javascript/">javascript</a><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/javascript/%E5%9F%BA%E7%A1%80/">基础</a><a class="category-link" href="/categories/%E7%A7%AF%E7%B4%AF%E4%B8%8E%E6%B2%89%E6%B7%80/">积累与沉淀</a><a class="category-link" href="/categories/%E7%A7%AF%E7%B4%AF%E4%B8%8E%E6%B2%89%E6%B7%80/%E7%BC%96%E7%A0%81%E4%B8%8E%E7%AE%A1%E7%90%86/">编码与管理</a><a class="category-link" href="/categories/%E7%A7%AF%E7%B4%AF%E4%B8%8E%E6%B2%89%E6%B7%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%9C%8D%E5%8A%A1/">自定义服务</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/netlify/" style="font-size: 10px;">netlify</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/verdaccio/" style="font-size: 10px;">verdaccio</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">基础</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" style="font-size: 15px;">基础概念</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编码规范</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>标签</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>关于我</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Node-js/" style="font-size: 15px;">Node.js</a> <a href="/tags/css/" style="font-size: 15px;">css</a> <a href="/tags/function/" style="font-size: 10px;">function</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/netlify/" style="font-size: 10px;">netlify</a> <a href="/tags/npm/" style="font-size: 15px;">npm</a> <a href="/tags/nrm/" style="font-size: 10px;">nrm</a> <a href="/tags/verdaccio/" style="font-size: 10px;">verdaccio</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">基础</a> <a href="/tags/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/" style="font-size: 15px;">基础概念</a> <a href="/tags/%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83/" style="font-size: 10px;">编码规范</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+
+<script src="/js/search.js"></script>
+
+
+<script src="/js/main.js"></script>
+
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  
+<script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+
+
+  
+<script src="/js/pop-img.js"></script>
+
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

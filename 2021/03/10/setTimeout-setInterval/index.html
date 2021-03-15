@@ -3,30 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>通过verdaccio服务搭建内部npm管理 | Zhenggl&#39;s Blog</title>
+  <title>setTimeout与setInterval | Zhenggl&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="zhenggl, javascript，css，html，react，android，ios，react-native，Node.js，webpack，gulp，小程序" />
   
-  <meta name="description" content="关于如何要共享组件？目前公司的前端项目比较多，涉及到中后台业务系统，有存在不少组件，在不同的业务系统中使用的，为了避免疯狂的ctrl +C &gt; ctrl + V，一堆的维护工作，这边搭建了内部的私有源，又不能将公司的一个资源扔到公共的npm上，因此这边利用verdaccio + gitlab来搭建以及维护蜘点前端公共的组件服务，通过verdaccio来管理组件的上传以及可视化管理，gitla">
+  <meta name="description" content="一、setTimeout和setInterval的基本用法1. 指定延迟XX秒后执行函数； 2. 指定周期来执行函数；   有以下一个场景情况： 12345678 function func(i)&amp;#123;	for(let i &#x3D; 0; i &lt; 5; i ++)&amp;#123;		console.info(&#96;xxx&#x3D;$&amp;#123;i&amp;#125;&#96;);	&amp;#125;&amp;#125; setInter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="通过verdaccio服务搭建内部npm管理">
-<meta property="og:url" content="https://www.91temaichang/2021/03/08/verdaccio-custom-npm/index.html">
+<meta property="og:title" content="setTimeout与setInterval">
+<meta property="og:url" content="https://www.91temaichang/2021/03/10/setTimeout-setInterval/index.html">
 <meta property="og:site_name" content="Zhenggl&#39;s Blog">
-<meta property="og:description" content="关于如何要共享组件？目前公司的前端项目比较多，涉及到中后台业务系统，有存在不少组件，在不同的业务系统中使用的，为了避免疯狂的ctrl +C &gt; ctrl + V，一堆的维护工作，这边搭建了内部的私有源，又不能将公司的一个资源扔到公共的npm上，因此这边利用verdaccio + gitlab来搭建以及维护蜘点前端公共的组件服务，通过verdaccio来管理组件的上传以及可视化管理，gitla">
+<meta property="og:description" content="一、setTimeout和setInterval的基本用法1. 指定延迟XX秒后执行函数； 2. 指定周期来执行函数；   有以下一个场景情况： 12345678 function func(i)&amp;#123;	for(let i &#x3D; 0; i &lt; 5; i ++)&amp;#123;		console.info(&#96;xxx&#x3D;$&amp;#123;i&amp;#125;&#96;);	&amp;#125;&amp;#125; setInter">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://img.91temaichang.com/blogimage2021-1-18%2017_8_18.png">
-<meta property="og:image" content="https://img.91temaichang.com/blog/image2021-1-18%2017_11_37.png">
-<meta property="og:image" content="https://img.91temaichang.com/blog/6622941-aa413cf524c5fa90.png">
-<meta property="article:published_time" content="2021-03-08T06:17:01.000Z">
-<meta property="article:modified_time" content="2021-03-08T07:07:51.949Z">
+<meta property="og:image" content="https://img.91temaichang.com/blog/interval1.png">
+<meta property="article:published_time" content="2021-03-10T08:20:55.000Z">
+<meta property="article:modified_time" content="2021-03-10T08:34:20.212Z">
 <meta property="article:author" content="Genglin Zheng">
-<meta property="article:tag" content="npm">
-<meta property="article:tag" content="Node.js">
-<meta property="article:tag" content="verdaccio">
-<meta property="article:tag" content="nrm">
+<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="基础概念">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img.91temaichang.com/blogimage2021-1-18%2017_8_18.png">
+<meta name="twitter:image" content="https://img.91temaichang.com/blog/interval1.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -132,7 +128,7 @@
 </header>
 
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-verdaccio-custom-npm" class="article article-type-post" itemscope
+        <section id="main" class="body-wrap"><article id="post-setTimeout-setInterval" class="article article-type-post" itemscope
          itemprop="blogPost">
     <div class="article-inner">
         
@@ -140,7 +136,7 @@
                 
   
     <h1 class="post-title" itemprop="name">
-      通过verdaccio服务搭建内部npm管理
+      setTimeout与setInterval
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -148,18 +144,18 @@
               <li>
                   <i class="fa fa-book"></i>
                   
-                      <a href="/categories/积累与沉淀/">
-                        积累与沉淀
+                      <a href="/categories/前端/">
+                        前端
                       </a>
                   
-                      <a href="/categories/自定义服务/">
-                        自定义服务
+                      <a href="/categories/javascript/">
+                        javascript
                       </a>
                   
               </li>
           
         <li>
-          <i class="fa fa-calendar"></i>  2021-03-08
+          <i class="fa fa-calendar"></i>  2021-03-10
         </li>
         <li>
           <i class="fa fa-eye"></i>
@@ -176,42 +172,16 @@
         <div class="article-entry post-content" itemprop="articleBody">
             
                 
-                <p><em>关于如何要共享组件？目前公司的前端项目比较多，涉及到中后台业务系统，有存在不少组件，在不同的业务系统中使用的，为了避免疯狂的ctrl +C &gt; ctrl + V，一堆的维护工作，这边搭建了内部的私有源，又不能将公司的一个资源扔到公共的npm上，因此这边利用verdaccio + gitlab来搭建以及维护蜘点前端公共的组件服务，通过verdaccio来管理组件的上传以及可视化管理，gitlab来管理组件的版本以及迭代，满足组件的更新迭代；</em></p>
-<h3 id="一、为啥子要使用私有源呢"><a href="#一、为啥子要使用私有源呢" class="headerlink" title="一、为啥子要使用私有源呢"></a>一、为啥子要使用私有源呢</h3><ol>
-<li>加快共有npm包的安装速度；</li>
-<li>避免本地npm install指向源，避免cnpm等其他源拉取npm包不及时的问题；</li>
-<li>私有源会将已经使用的npm包缓存下来，提升个人本地/打包环境npm包的安装速度；</li>
-<li>把公共代码上传到私有源，可以在多个git仓库项目中通过npm的方式来使用；</li>
-<li>A仓库 封装了一个 video组件，想给B仓库使用。那就可以制作一个 video组件仓库，然后发布到 私有源上。A和B仓库使用的时候就 npm install 组件库，let api = require(‘组件库’) 啦~ 这个步骤和 发公有npm包是一模一样的，只是发的位置不一样而已。</li>
-</ol>
-<h3 id="二、通过verdaccio服务，搭建内部npm管理"><a href="#二、通过verdaccio服务，搭建内部npm管理" class="headerlink" title="二、通过verdaccio服务，搭建内部npm管理"></a>二、通过verdaccio服务，搭建内部npm管理</h3><ol>
-<li>访问<a target="_blank" rel="noopener" href="https://verdaccio.org/docs/zh-CN/authentification">verdaccio官网</a>按照这个一步一步来就行</li>
-<li>如果是本地电脑 不需要改 verdaccio的 config.yaml配置文件，如果是服务器部署，那你需要改 config.yaml的配置</li>
-<li>我们这里按服务器部署为例子</li>
-<li>你需要先安装上 <code>shell node npm pm2</code></li>
-<li><code>shell npm install -g verdaccio</code></li>
-<li>创建一个 非root的账户</li>
-<li>在此账户下 执行verdaccio，且找到 config.yaml文件</li>
-<li>要在内部机器上运行，因此，需要这是局域网访问，vim修改config.yaml，新增一行，保存：<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">listen: 0.0.0.0:4873</span><br></pre></td></tr></table></figure>
-verdaccis 跑一下，显示一下内容就正常了；<br><img src="https://img.91temaichang.com/blogimage2021-1-18%2017_8_18.png" alt="verdaccio效果图"></li>
-</ol>
-<h3 id="三、日常使用–切换npm源"><a href="#三、日常使用–切换npm源" class="headerlink" title="三、日常使用–切换npm源"></a>三、日常使用–切换npm源</h3><ol>
-<li>由于内部npm也是使用的npm来管理，因此，需要一专门的工具，来管理源的切换；</li>
-<li>打开命令行工具，安装npm切换源的快捷工具npm/nrm：<code>shell npm install -g nrm</code></li>
-<li>输入命令：<code>shell nrm ls</code>，可以看到以下截图，前面有个小星星的，代表当前源是指向哪里的</li>
-<li>输入命令：<code>shell nrm add</code> 源名称 源地址，创建一个新的源</li>
-<li>输入命令：<code>shell nrm use</code> 源名字，切换使用的源<br><img src="https://img.91temaichang.com/blog/image2021-1-18%2017_11_37.png" alt="nrm 切换源"></li>
-</ol>
-<h3 id="四、日常使用"><a href="#四、日常使用" class="headerlink" title="四、日常使用"></a>四、日常使用</h3><ol>
-<li>切换使用的源；</li>
-<li>通过npm安装依赖即可；</li>
-</ol>
-<h3 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h3><p>至此，整个内部npm的使用以及发布就已经全部说明完成了，无论团队的开发者/使用者来说，只要用nrm将源切换为私有源就可以了。<br>verdaccio通过代理的形式，把私有包和官方包且分开；<br><img src="https://img.91temaichang.com/blog/6622941-aa413cf524c5fa90.png" alt="内部npm管理示意图"></p>
+                <h3 id="一、setTimeout和setInterval的基本用法"><a href="#一、setTimeout和setInterval的基本用法" class="headerlink" title="一、setTimeout和setInterval的基本用法"></a>一、setTimeout和setInterval的基本用法</h3><pre><code>1. 指定延迟XX秒后执行函数；
+2. 指定周期来执行函数；
+</code></pre>
+<p> 有以下一个场景情况：<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params">i</span>)</span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i ++)&#123;</span><br><span class="line">		<span class="built_in">console</span>.info(<span class="string">`xxx=<span class="subst">$&#123;i&#125;</span>`</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> <span class="built_in">setInterval</span>(<span class="function"><span class="keyword">function</span> (<span class="params"></span>)</span>&#123;</span><br><span class="line">	func(<span class="number">10</span>);</span><br><span class="line">&#125;, <span class="number">100</span>);</span><br></pre></td></tr></table></figure><br>上面这个代码块，每隔100毫秒执行func函数，如果func函数的执行时间少于100毫秒的话，则下一个100毫秒都能够执行到func，执行的示意图如下：</p>
+<p><img src="https://img.91temaichang.com/blog/interval1.png" alt="正常的setInterval"></p>
 
                 <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2021年03月08日 15:07</p>
-        <p>原始链接： <a class="post-url" href="/2021/03/08/verdaccio-custom-npm/" title="通过verdaccio服务搭建内部npm管理">https://www.91temaichang/2021/03/08/verdaccio-custom-npm/</a></p>
+        <p>最后更新： 2021年03月10日 16:34</p>
+        <p>原始链接： <a class="post-url" href="/2021/03/10/setTimeout-setInterval/" title="setTimeout与setInterval">https://www.91temaichang/2021/03/10/setTimeout-setInterval/</a></p>
         <footer>
             <a href="https://www.91temaichang">
                 <img src="/images/logo.png" alt="Genglin Zheng">
@@ -268,7 +238,7 @@ verdaccis 跑一下，显示一下内容就正常了；<br><img src="https://img
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.91temaichang/2021/03/08/verdaccio-custom-npm/&title=《通过verdaccio服务搭建内部npm管理》 — Zhenggl's Blog&pic=https://img.91temaichang.com/blog/verdaccio.jpeg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://www.91temaichang/2021/03/10/setTimeout-setInterval/&title=《setTimeout与setInterval》 — Zhenggl's Blog&pic=https://www.91temaichangimages/logo.png" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -278,22 +248,22 @@ verdaccis 跑一下，显示一下内容就正常了；<br><img src="https://img
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.91temaichang/2021/03/08/verdaccio-custom-npm/&title=《通过verdaccio服务搭建内部npm管理》 — Zhenggl's Blog&source=专注于大前端行业领域的学习，javascript，css，html，react，android，ios，react-native，Node.js，webp..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://www.91temaichang/2021/03/10/setTimeout-setInterval/&title=《setTimeout与setInterval》 — Zhenggl's Blog&source=专注于大前端行业领域的学习，javascript，css，html，react，android，ios，react-native，Node.js，webp..." data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.91temaichang/2021/03/08/verdaccio-custom-npm/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://www.91temaichang/2021/03/10/setTimeout-setInterval/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《通过verdaccio服务搭建内部npm管理》 — Zhenggl's Blog&url=https://www.91temaichang/2021/03/08/verdaccio-custom-npm/&via=https://www.91temaichang" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《setTimeout与setInterval》 — Zhenggl's Blog&url=https://www.91temaichang/2021/03/10/setTimeout-setInterval/&via=https://www.91temaichang" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.91temaichang/2021/03/08/verdaccio-custom-npm/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://www.91temaichang/2021/03/10/setTimeout-setInterval/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -303,7 +273,7 @@ verdaccis 跑一下，显示一下内容就正常了；<br><img src="https://img
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.91temaichang/2021/03/08/verdaccio-custom-npm/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://www.91temaichang/2021/03/10/setTimeout-setInterval/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -315,13 +285,9 @@ verdaccis 跑一下，显示一下内容就正常了；<br><img src="https://img
   <li class="article-footer-tags">
     <i class="fa fa-tags"></i>
       
-    <a href="/tags/npm/" class="color4">npm</a>
+    <a href="/tags/javascript/" class="color1">javascript</a>
       
-    <a href="/tags/Node.js/" class="color3">Node.js</a>
-      
-    <a href="/tags/verdaccio/" class="color5">verdaccio</a>
-      
-    <a href="/tags/nrm/" class="color4">nrm</a>
+    <a href="/tags/基础概念/" class="color5">基础概念</a>
       
   </li>
 
@@ -334,7 +300,7 @@ verdaccis 跑一下，显示一下内容就正常了；<br><img src="https://img
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E4%B8%BA%E5%95%A5%E5%AD%90%E8%A6%81%E4%BD%BF%E7%94%A8%E7%A7%81%E6%9C%89%E6%BA%90%E5%91%A2"><span class="post-toc-text">一、为啥子要使用私有源呢</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E9%80%9A%E8%BF%87verdaccio%E6%9C%8D%E5%8A%A1%EF%BC%8C%E6%90%AD%E5%BB%BA%E5%86%85%E9%83%A8npm%E7%AE%A1%E7%90%86"><span class="post-toc-text">二、通过verdaccio服务，搭建内部npm管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E2%80%93%E5%88%87%E6%8D%A2npm%E6%BA%90"><span class="post-toc-text">三、日常使用–切换npm源</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8"><span class="post-toc-text">四、日常使用</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%93%E6%9D%9F"><span class="post-toc-text">结束</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81setTimeout%E5%92%8CsetInterval%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="post-toc-text">一、setTimeout和setInterval的基本用法</span></a></li></ol>
         </nav>
     </aside>
     
@@ -342,19 +308,19 @@ verdaccis 跑一下，显示一下内容就正常了；<br><img src="https://img
     
 <nav id="article-nav">
   
-    <a href="/2021/03/08/code-rule-mag/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/03/12/css-study-structure/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          编码规范
+          玩转CSS
         
       </span>
     </a>
   
   
-    <a href="/2021/03/07/hexo-github-netify/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">Hexo + github + netlify搭建自己的博客系统</span>
+    <a href="/2021/03/08/js-basic-data-type/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">javascript数据类型</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
@@ -363,7 +329,7 @@ verdaccis 跑一下，显示一下内容就正常了；<br><img src="https://img
 
 
     
-        <div id="SOHUCS" sid="verdaccio-custom-npm" ></div>
+        <div id="SOHUCS" sid="setTimeout-setInterval" ></div>
 <script type="text/javascript">
     (function(){
         var appid = 'cyvl74M4O';
